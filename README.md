@@ -62,3 +62,51 @@ BASIC VALIDATION
 # If the entered grade falls within the range of 0 and 100 it is valid. Otherwise if it does not fall wwithin the ragnge? It prints "Inval#id grade. Please enter a number between 0 and 100".
 # It prompts the user to enter a numeric value if the user enter a nonnumeric value by telling the uer the input is invalid.
 
+# Section B
+# Section B
+# Define a list of subjects
+
+subjects = ['English', 'Mathematics', 'Economics']
+# Create a list to store student data as tuples (name, grades)
+
+students = []
+# Function to add student data
+def add_student(name, grades):
+
+    students.append((name, grades))
+# Function to calculate average grades and display information
+def display_student_info():
+print("\nStudent Summary:")
+for name, grades in students:
+
+        average = sum(grades) / len(grades)
+print(f"Name: {name}, Grades: {grades}, Average: {average:.2f}")
+# Function to find highest and lowest grades for each subject
+def subject_statistics():
+for i, subject in enumerate(subjects):
+
+        subject_grades = [grades[i] for _, grades in students]
+
+        highest = max(subject_grades)
+
+        lowest = min(subject_grades)
+print(f"\n{subject} - Highest: {highest}, Lowest: {lowest}")
+# Add students with their grades
+
+add_student("Mark", [45, 67, 78])
+
+add_student("Matthew", [100, 80, 91])
+
+add_student("John", [98, 54, 76])
+# Display student information and statistics
+
+display_student_info()
+
+subject_statistics()
+
+ # We have modified our code to allow each student to have grades for multiple subjects
+ # We define the subjects in a list
+ # The student's names and grades are stored as tuples in a list called students
+ # The add_student function is then used to add the name and grades in a tuple to students
+ # The display_student_info function calculates and displays each student's grades and their average.
+ # The subject_statistics function calculates and prints the highest and lowest grades for each subject by extracting grades based on their index.
